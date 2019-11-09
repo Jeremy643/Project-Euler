@@ -9,6 +9,12 @@ public class EvenFibNum {
 	private static int newTerm = 3;
 	private static int sum = 2;
 	
+	private static void updateSequence() {
+		term1 = term2;
+		term2 = newTerm;
+		newTerm = term1 + term2;
+	}
+	
 	private static boolean isEven(int val) {
 		if (val % 2 == 0) {
 			return true;
@@ -22,7 +28,10 @@ public class EvenFibNum {
 			if (isEven(newTerm)) {
 				sum += newTerm;
 			}
+			updateSequence();
 		}
+		
+		System.out.println(sum);
 	}
 
 }
