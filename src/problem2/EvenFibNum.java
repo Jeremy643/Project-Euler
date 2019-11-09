@@ -2,7 +2,7 @@ package problem2;
 
 public class EvenFibNum {
 	
-	private static final int limit = 4000000;
+	private static final int LIMIT = 4000000;
 	
 	private static int term1 = 1;
 	private static int term2 = 2;
@@ -24,7 +24,7 @@ public class EvenFibNum {
 	}
 
 	public static void main(String[] args) {
-		while (newTerm < limit) {
+		while (newTerm < LIMIT) {
 			if (isEven(newTerm)) {
 				sum += newTerm;
 			}
