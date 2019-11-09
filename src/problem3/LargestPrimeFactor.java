@@ -5,10 +5,10 @@ import java.util.List;
 
 public class LargestPrimeFactor {
 	
-	private static final int NUMBER_OF_PRIMES = 25;
-	
+	private static int numberOfPrimes = 1;
 	private static long number = 600851475143L;
 	private static List<Integer> primes = new ArrayList<>();
+	private static List<Integer> primeFactors = new ArrayList<>();
 	
 	private static void getPrimes() {
 		int possiblePrime = 2;
@@ -27,11 +27,26 @@ public class LargestPrimeFactor {
 			}
 			
 			possiblePrime++;
-		} while (primes.size() < NUMBER_OF_PRIMES);
+		} while (primes.size() < numberOfPrimes);
+	}
+	
+	private static void getPrimeFactors() {
+		for (int prime : primes) {
+			if (number == 1) {
+				break;
+			}
+			
+			if (number % prime == 0) {
+				primeFactors.add(prime);
+				number /= prime;
+			}
+		}
 	}
 
 	public static void main(String[] args) {
 		getPrimes();
+		
+		getPrimeFactors();
 	}
 
 }
