@@ -2,8 +2,7 @@ package problem4;
 
 public class LargestPalindromeProduct {
 	
-	private static int startingNumber = 999;
-	private static int limit = 900;
+	private static int largestPalindrome = 0;
 	
 	private static boolean isPalindrome(int val) {
 		int isPal = val;
@@ -22,23 +21,19 @@ public class LargestPalindromeProduct {
 		}
 	}
 	
-	private static int getLargestPalindrome() {
+	private static void getLargestPalindrome() {
 		for (int i = 999; i > 99; i--) {
-			for (int j = startingNumber; j > limit; j--) {
+			for (int j = 999; j > 99; j--) {
 				int palindrome = i * j;
-				if (isPalindrome(palindrome)) {
-					return palindrome;
+				if (isPalindrome(palindrome) && palindrome > largestPalindrome) {
+					largestPalindrome = palindrome;
 				}
 			}
-			startingNumber -= 1;
-			limit -= 100;
 		}
-		
-		return 0;
 	}
 
 	public static void main(String[] args) {
-		int largestPalindrome = getLargestPalindrome();
+		getLargestPalindrome();
 		System.out.println(largestPalindrome);
 	}
 
