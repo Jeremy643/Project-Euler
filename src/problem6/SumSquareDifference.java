@@ -5,7 +5,13 @@ public class SumSquareDifference {
 	private static final int LIMIT = 100;
 	
 	private static int getSumSquares() {
-		return 0;
+		int sum = 0;
+		for (int i = 1; i <= LIMIT; i++) {
+			int square = i*i;
+			sum += square;
+		}
+		
+		return sum;
 	}
 	
 	private static int getSquareSums() {
