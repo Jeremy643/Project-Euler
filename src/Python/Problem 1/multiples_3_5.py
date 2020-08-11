@@ -19,3 +19,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# my_list = sum([i for i in range(1, 1000) if i % 3 == 0 or i % 5 == 0])
+# print(my_list)
